@@ -17,6 +17,8 @@ Le programme utilise un ruban **5 V de type WS2812, ordre GRB**, piloté par **G
 
 Alimentez le ruban par une branche adaptée du bloc 5 V et la carte par USB. Le courant du ruban ne doit pas traverser la carte. Le schéma et les instructions de fabrication du coffret seront disponibles sur la fiche Atomm du projet (publication en préparation).
 
+Une alimentation **USB 5 V / 2 A au total** convient à notre montage avec les animations fournies, ce que nous avons confirmé par des mesures. Ces effets n’allument jamais simultanément tous les canaux de couleur de toutes les LED à 100 %. Si vous ajoutez des LED ou modifiez les animations, mesurez à nouveau la consommation et adaptez l’alimentation et le câblage.
+
 Dans `include/config.h`, adaptez la broche, les nombres de LED, les teintes et la durée des effets. Dans `src/main.cpp`, le tableau `enabled` active les animations : conservez au moins une valeur `true`. La luminosité globale est réglée par `FastLED.setBrightness(255)` dans ce même fichier ; `BRIGHTNESS_BASE` n’est pas utilisé.
 
 ## Animations
